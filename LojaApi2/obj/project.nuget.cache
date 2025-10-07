@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B9+ieEojWGA=",
+  "dgSpecHash": "0xb3eZYTb/o=",
   "success": true,
-  "projectFilePath": "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi\\LojaApi.csproj",
+  "projectFilePath": "c:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TI 04\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\TI 04\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",

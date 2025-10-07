@@ -452,11 +452,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi\\LojaApi.csproj",
+      "projectUniqueName": "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj",
       "projectName": "LojaApi",
-      "projectPath": "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi\\LojaApi.csproj",
+      "projectPath": "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj",
       "packagesPath": "C:\\Users\\TI 04\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi\\obj\\",
+      "outputPath": "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\TI 04\\AppData\\Roaming\\NuGet\\NuGet.Config"
