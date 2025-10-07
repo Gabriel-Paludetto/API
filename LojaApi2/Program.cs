@@ -14,12 +14,14 @@ builder.Services.AddControllers();
 // 1. Registro do Serviço
 builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IProdutoService, ProdutoService>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 
 // 2. Registro do Repositório
 //    Sempre que alguém (como o ClienteService) pedir a Interface IClienteRepository,
 //    entregue a implementação (mockada) ClienteRepository.
 builder.Services.AddSingleton<IClienteRepository, ClienteRepository>();
 builder.Services.AddSingleton<IProdutoRepository, ProdutoRepository>();
+builder.Services.AddSingleton<ICategoriaRepository, CategoriaRepository>();
 
 // Configuração do Swagger
 builder.Services.AddEndpointsApiExplorer();
