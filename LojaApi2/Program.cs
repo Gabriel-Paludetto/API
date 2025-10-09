@@ -27,7 +27,7 @@ builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 //    entregue a implementação (mockada) ClienteRepository.
 builder.Services.AddScoped<IClienteRepository, ClienteDBRepository>();
 builder.Services.AddScoped<IProdutoRepository, ProdutoDBRepository>();
-builder.Services.AddSingleton<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<ICategoriaRepository, CategoriaDBRepository>();
 
 // Configuração do Swagger
 builder.Services.AddEndpointsApiExplorer();
