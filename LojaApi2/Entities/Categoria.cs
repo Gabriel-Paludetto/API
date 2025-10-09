@@ -16,3 +16,5 @@ namespace LojaApi.Entities
         public string Descricao { get; set; } = string.Empty;
     }
 }
+
+//Comentário adicionado para testar Branch

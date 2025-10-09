@@ -5,7 +5,8 @@ using LojaApi.Repositories.Interfaces;
 
 namespace LojaApi.Repositories;
 
-public class CategoriaDBRepository : ICategoriaRepository
+public class CategoriaDBRepository :ICategoriaRepository
+
 {
     private readonly LojaContext _context;
 
@@ -21,7 +22,7 @@ public class CategoriaDBRepository : ICategoriaRepository
 
     public Categoria? ObterPorId(int id)
     {
-        return _context.Categorias.FirstOrDefault(p => p.Id == id);
+        return _context.Categorias.FirstOrDefault(c => c.Id == id);
     }
 
     public Categoria Adicionar(Categoria novaCategoria)
