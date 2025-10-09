@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj": {}
+    "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj": {
+    "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj",
+        "projectUniqueName": "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj",
         "projectName": "LojaApi",
-        "projectPath": "c:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj",
+        "projectPath": "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\LojaApi.csproj",
         "packagesPath": "C:\\Users\\TI 04\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\obj\\",
+        "outputPath": "C:\\Users\\TI 04\\Desktop\\GABRIEL\\API\\LojaApi2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TI 04\\AppData\\Roaming\\NuGet\\NuGet.Config"
