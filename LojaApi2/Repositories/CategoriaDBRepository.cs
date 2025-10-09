@@ -6,6 +6,7 @@ using LojaApi.Repositories.Interfaces;
 namespace LojaApi.Repositories;
 
 public class CategoriaDBRepository :ICategoriaRepository
+
 {
     private readonly LojaContext _context;
 
