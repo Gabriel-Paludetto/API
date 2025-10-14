@@ -21,3 +21,5 @@ namespace LojaApi.Entities
         public ICollection<Produto> Produtos { get; set; } = new List<Produto>();
     }
 }
+
+//Comentário adicionado para testar Branch

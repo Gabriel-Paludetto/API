@@ -6,7 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LojaApi.Repositories;
 
-public class CategoriaDBRepository : ICategoriaRepository
+public class CategoriaDBRepository :ICategoriaRepository
+
 {
     private readonly LojaContext _context;
 
