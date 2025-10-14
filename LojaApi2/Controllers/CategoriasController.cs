@@ -33,18 +33,21 @@ namespace LojaApi.Controllers
         [HttpPost]
         public ActionResult<Categoria> Add(Categoria novaCategoria)
         {
-            if (string.IsNullOrWhiteSpace(novaCategoria.Descricao))
+            try
             {
-                return BadRequest("A descrição da categoria é obrigatória.");
+                var categoriaAdicionado = _categoriaService.Adicionar(novaCategoria);
+                return CreatedAtAction(nameof(GetById), new { id = categoriaAdicionado.Id }, categoriaAdicionado);
             }
-            var categoriaCriada = _categoriaService.Adicionar(novaCategoria);
-            return CreatedAtAction(nameof(GetById), new { id = categoriaCriada.Id }, categoriaCriada);
+            catch (Exception ex)
+            { 
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]
         public ActionResult<Categoria> Update(int id, Categoria categoriaAtualizada)
         {
-            if (string.IsNullOrWhiteSpace(categoriaAtualizada.Descricao))
+            if (string.IsNullOrWhiteSpace(categoriaAtualizada.Nome))
             {
                 return BadRequest("A descrição da categoria é obrigatória.");
             }

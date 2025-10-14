@@ -14,11 +14,11 @@ namespace LojaApi.Entities
         [Column("nome_cliente")]
         [Required]
         [StringLength(150)]
-        public string Nome { get; set; } = string.Empty;
+        public string? Nome { get; set; }
         [Column("email_cliente")]
         [Required]
         [StringLength(150)]
-        public string Email { get; set; } = string.Empty;
+        public string? Email { get; set; }
         [Column("ativo")]
         public bool Ativo { get; set; }
 

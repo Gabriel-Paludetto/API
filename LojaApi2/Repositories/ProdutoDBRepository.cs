@@ -2,6 +2,7 @@ using System;
 using LojaApi.Data;
 using LojaApi.Entities;
 using LojaApi.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace LojaApi.Repositories;
 
@@ -16,12 +17,12 @@ public class ProdutoDBRepository : IProdutoRepository
 
     public List<Produto> ObterTodos()
     {
-        return _context.Produtos.ToList();
+        return _context.Produtos.Include(p => p.Categoria).ToList();
     }
 
     public Produto? ObterPorId(int id)
     {
-        return _context.Produtos.FirstOrDefault(p => p.Id == id);
+        return _context.Produtos.Include(p => p.Categoria).FirstOrDefault(p => p.Id == id);
     }
 
     public Produto Adicionar(Produto novoProduto)
