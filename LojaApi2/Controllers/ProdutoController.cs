@@ -33,18 +33,21 @@ namespace LojaApi.Controllers
         [HttpPost]
         public ActionResult<Produto> Add(Produto novoProduto)
         {
-            if (string.IsNullOrWhiteSpace(novoProduto.Descricao))
+            try
             {
-                return BadRequest("A descrição do produto é obrigatório.");
+                var produtoAdicionado = _produtoService.Adicionar(novoProduto);
+                return CreatedAtAction(nameof(GetById), new { id = produtoAdicionado.Id }, produtoAdicionado);
             }
-            var produtoCriado = _produtoService.Adicionar(novoProduto);
-            return CreatedAtAction(nameof(GetById), new { id = produtoCriado.Id }, produtoCriado);
+            catch (Exception ex)
+            { 
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]
         public ActionResult<Produto> Update(int id, Produto produtoAtualizado)
         {
-            if (string.IsNullOrWhiteSpace(produtoAtualizado.Descricao))
+            if (string.IsNullOrWhiteSpace(produtoAtualizado.Nome))
             {
                 return BadRequest("A descrição do produto é obrigatório.");
             }

@@ -2,6 +2,7 @@ using System;
 using LojaApi.Data;
 using LojaApi.Entities;
 using LojaApi.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace LojaApi.Repositories;
 
@@ -16,12 +17,12 @@ public class CategoriaDBRepository : ICategoriaRepository
 
     public List<Categoria> ObterTodos()
     {
-        return _context.Categorias.ToList();
+        return _context.Categorias.Include(p => p.Produtos).ToList();
     }
 
     public Categoria? ObterPorId(int id)
     {
-        return _context.Categorias.FirstOrDefault(p => p.Id == id);
+        return _context.Categorias.Include(p => p.Produtos).FirstOrDefault(p => p.Id == id);
     }
 
     public Categoria Adicionar(Categoria novaCategoria)

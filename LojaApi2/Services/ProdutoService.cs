@@ -8,9 +8,12 @@ namespace LojaApi.Services
     {
         private readonly IProdutoRepository _produtoRepository;
 
-        public ProdutoService(IProdutoRepository produtoRepository)
+        private readonly ICategoriaRepository _categoriaRepository;
+
+        public ProdutoService(IProdutoRepository produtoRepository,ICategoriaRepository categoriaRepository)
         {
             _produtoRepository = produtoRepository;
+            _categoriaRepository = categoriaRepository;
         }
 
         public List<Produto> ObterTodos()
@@ -25,7 +28,20 @@ namespace LojaApi.Services
 
         public Produto Adicionar(Produto novoProduto)
         {
-            novoProduto.Descricao = novoProduto.Descricao.ToUpper();
+            var categoria = _categoriaRepository.ObterPorId(novoProduto.CategoriaId);
+            if (categoria == null)
+            {
+
+                // Em um projeto real, lançaríamos uma exceção customizada que vamos ver mais à frente no curso. 
+                // Por simplicidade, podemos retornar null ou uma mensagem. 
+                throw new Exception("A categoria informada não existe.");
+            }
+
+            if (categoria.Nome!.Equals("Eletrônicos",StringComparison.OrdinalIgnoreCase) && novoProduto.Preco < 50.00m)
+            {
+                throw new Exception("Produtos da categoria 'Eletrônicos' devem custar no mínimo R$ 50,00.");
+            }
+
             return _produtoRepository.Adicionar(novoProduto);
         }
 

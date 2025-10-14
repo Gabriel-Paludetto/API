@@ -7,7 +7,7 @@ namespace LojaApi.Services
 {
     public class CategoriaService : ICategoriaService
     {
-        private readonly ICategoriaRepository _categoriaRepository;
+        public readonly ICategoriaRepository _categoriaRepository;
 
         public CategoriaService(ICategoriaRepository categoriaRepository)
         {
@@ -26,7 +26,15 @@ namespace LojaApi.Services
 
         public Categoria Adicionar(Categoria novaCategoria)
         {
-            novaCategoria.Descricao = novaCategoria.Descricao.ToUpper();
+            var categoria = _categoriaRepository.ObterPorId(novaCategoria.Id);
+            if (categoria == null)
+            {
+
+                // Em um projeto real, lançaríamos uma exceção customizada que vamos ver mais à frente no curso. 
+                // Por simplicidade, podemos retornar null ou uma mensagem. 
+                throw new Exception("A categoria informada não existe.");
+            }
+
             return _categoriaRepository.Adicionar(novaCategoria);
         }
 
@@ -41,7 +49,7 @@ namespace LojaApi.Services
             var categoria = _categoriaRepository.ObterPorId(id);
             if (categoria != null)
             {
-                categoria.Descricao = "Excluído";
+                categoria.Nome = "Excluído";
                 return _categoriaRepository.Atualizar(id, categoria) != null;
             }
             return false;
