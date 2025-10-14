@@ -29,7 +29,7 @@ namespace LojaApi.Entities
         [Column("id_categoria")]
         [Required(ErrorMessage = "O ID da categoria é obrigatório.")]
         public int CategoriaId { get; set; }
-
+ 
         [ForeignKey("CategoriaId")]
         public Categoria? Categoria{ get; set; }
     }

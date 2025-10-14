@@ -8,18 +8,22 @@ namespace LojaApi.Repositories;
 public class ClienteDBRepository : IClienteRepository
 {
     private readonly LojaContext _context;
+
     public ClienteDBRepository(LojaContext context)
     {
         _context = context;
     }
+
     public List<Cliente> ObterTodos()
     {
         return _context.Clientes.ToList();
     }
+
     public Cliente? ObterPorId(int id)
     {
         return _context.Clientes.FirstOrDefault(c => c.Id == id);
     }
+
     public Cliente Adicionar(Cliente novoCliente)
     {
         novoCliente.DataCadastro = DateTime.UtcNow;
@@ -27,12 +31,14 @@ public class ClienteDBRepository : IClienteRepository
         _context.SaveChanges();
         return novoCliente;
     }
+
     public Cliente? Atualizar(int id, Cliente clienteAtualizado)
     {
         _context.Clientes.Update(clienteAtualizado);
         _context.SaveChanges();
         return clienteAtualizado;
     }
+    
     public bool Remover(int id)
     {
         var clienteParaDeletar = ObterPorId(id);

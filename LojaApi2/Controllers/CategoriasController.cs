@@ -64,4 +64,4 @@ namespace LojaApi.Controllers
             return NoContent();
         }
     }
-}
+} 

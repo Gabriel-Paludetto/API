@@ -31,9 +31,6 @@ namespace LojaApi.Services
             var categoria = _categoriaRepository.ObterPorId(novoProduto.CategoriaId);
             if (categoria == null)
             {
-
-                // Em um projeto real, lançaríamos uma exceção customizada que vamos ver mais à frente no curso. 
-                // Por simplicidade, podemos retornar null ou uma mensagem. 
                 throw new Exception("A categoria informada não existe.");
             }
 

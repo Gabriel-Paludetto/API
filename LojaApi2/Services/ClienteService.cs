@@ -29,7 +29,7 @@ namespace LojaApi.Services
 
         public Cliente Adicionar(Cliente novoCliente)
         {
-            novoCliente.Nome = novoCliente.Nome.ToUpper();
+            novoCliente.Nome = novoCliente.Nome!.ToUpper();
             novoCliente.Ativo = true;
             return _clienteRepository.Adicionar(novoCliente);
         }

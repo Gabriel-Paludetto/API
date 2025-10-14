@@ -17,7 +17,7 @@ namespace LojaApi.Entities
         [StringLength(150, MinimumLength = 3, ErrorMessage = "O nome deve ter entre 3 e 150 caracteres.")]
         public string? Nome { get; set; } 
 
-        [JsonIgnore]
+        [JsonIgnore] 
         public ICollection<Produto> Produtos { get; set; } = new List<Produto>();
     }
 }
